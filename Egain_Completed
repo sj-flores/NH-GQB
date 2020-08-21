@@ -10,6 +10,6 @@ SELECT
   TIPOLOGIA,
   Agent_Completed
  from `nh-cro-forecast.Mails.Entry_data`
- WHERE TRAFICO = 'SI' and CRO_GROUP <> 'Support' and Agent_Completed <> 'System' and BUSINESS_UNIT <> 'SPAM' and TIPOLOGIA <> 'Inbox' and (year between 2019 and 2020)
+ WHERE year between 2019 and 2020
  GROUP BY Day, year, Month, CRO_NO_CRO, TRAFICO, CRO_GROUP, BUSINESS_UNIT, TIPOLOGIA, Agent_Completed
  ORDER BY Day DESC

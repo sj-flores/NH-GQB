@@ -8,6 +8,6 @@ SELECT
   CRO_NOCRO,
 FROM
   `nh-cro-forecast.Codifications.Entry_data`
- WHERE (year between 2019 and 2020) and (CRO_NOCRO = 'CRO' or CRO_NOCRO = 'CRO Lisbon' or CRO_NOCRO = 'CRO Mexico')
+ WHERE (year between 2019 and 2020) and (CRO_NOCRO = 'CRO' or CRO_NOCRO = 'CRO Lisbon' or CRO_NOCRO = 'CRO Mexico') and (Look_to_book = 'Look to Book' or Look_to_book = 'Low Potencial')
  GROUP BY Day, Look_to_book, bu, New_BU, WEB_NOWEB, CRO_NOCRO  
  ORDER BY Day DESC

@@ -1,0 +1,13 @@
+SELECT
+  CAST(date as Date) As Day,
+  Look_to_book,
+  sum(codificadas) as total_codificadas,
+  bu,
+  New_BU,
+  WEB_NOWEB,
+  CRO_NOCRO,
+FROM
+  `nh-cro-forecast.Codifications.Entry_data`
+ WHERE (year between 2019 and 2020) and (CRO_NOCRO = 'CRO' or CRO_NOCRO = 'CRO Lisbon' or CRO_NOCRO = 'CRO Mexico')
+ GROUP BY Day, Look_to_book, bu, New_BU, WEB_NOWEB, CRO_NOCRO  
+ ORDER BY Day DESC
